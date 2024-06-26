@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Form, redirect, useActionData, useNavigation } from "react-router-dom";
-import { OrderPizzaForm } from "../../modals/modal";
 import { createOrder } from "../../services/apiRestaurant";
 import store from "../../store";
 import Button from "../../ui/Button";
@@ -145,7 +144,7 @@ export async function action({ request }: any) {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
 
-  const order: OrderPizzaForm = {
+  const order: any = {
     ...data,
     cart: JSON.parse(data.cart),
     priority: data.priority === "true",

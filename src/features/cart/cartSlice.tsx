@@ -9,7 +9,7 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addItem(state, action) {
+    addItem(state: any, action) {
       // payload-newItem
       state.cart.push(action.payload);
     },
@@ -21,7 +21,7 @@ const cartSlice = createSlice({
     },
     increaseItemQuantity(state, action) {
       // payload=pizzaId
-      const item: FakeCart = state.cart.find(
+      const item: any = state.cart.find(
         (item: FakeCart) => item.pizzaId === action.payload
       );
 
@@ -30,7 +30,7 @@ const cartSlice = createSlice({
     },
     decreaseItemQuantity(state, action) {
       // payload=pizzaId
-      const item: FakeCart = state.cart.find(
+      const item: any = state.cart.find(
         (item: FakeCart) => item.pizzaId === action.payload
       );
 

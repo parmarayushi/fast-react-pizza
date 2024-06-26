@@ -43,15 +43,8 @@ export default function Order() {
   // const order = useLoaderData() as Order;
 
   // Everyone can search for all orders, so for privacy reasons we're gonna gonna exclude names or address, these are only for the restaurant staff
-  const {
-    id,
-    status,
-    priority,
-    priorityPrice,
-    orderPrice,
-    estimatedDelivery,
-    cart,
-  }: OrderData = order;
+  const { id, status, priority, priorityPrice, orderPrice, cart }: OrderData =
+    order;
   // Convert estimatedDelivery from string to Date object
   const estimatedDeliveryDate = new Date(order.estimatedDelivery);
   // Calculate minutes left
